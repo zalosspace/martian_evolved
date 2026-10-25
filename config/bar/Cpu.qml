@@ -3,9 +3,7 @@ import Quickshell.Io
 import QtQuick
 
 // CPU
-Rectangle {
-  id: cpuUsagePill
-
+Widget {
   function updateCpuUsage() {
     cpuProcess.running = true
   }
@@ -34,17 +32,8 @@ Rectangle {
 
     Component.onCompleted: running = true
   }
-  color: "#040e0d"
-  width: cpuUsageText.implicitWidth + 26
-  height: bar.implicitHeight
-  radius: height / 2
 
-  Text {
-    id: cpuUsageText
-    anchors.centerIn: parent
-    color: "#f5e2c5"
-    font.weight: 600
-    text: "Cpu: " + cpuUsage + "%"
-  }
+  icon: "memory"
+  title: cpuUsage + "%"
 }
 

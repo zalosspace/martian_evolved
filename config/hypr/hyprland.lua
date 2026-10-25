@@ -29,7 +29,10 @@ local menu        = "rofi -show drun"
 hl.on("hyprland.start", function()
     hl.exec_cmd("/home/zalos/.config/change_to_dvorak.sh")
     hl.exec_cmd(terminal)
-    hl.exec_cmd("waybar & awww-daemon & zen")
+    hl.exec_cmd("awww-daemon")
+    -- start zen with nvidia
+    hl.exec_cmd("/home/zalos/zenn.sh")
+    hl.exec_cmd("quickshell -p martain_evolved/config/bar/shell.qml")
 
     -- hl.exec_cmd("pulseaudio --start")
     hl.exec_cmd("pipewire &")
@@ -300,6 +303,10 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
 -- hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
 -- hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
+
+-- Screenshot
+hl.bind(mainMod .. " + S",  hl.dsp.exec_cmd("hyprshot -m region"))
+
 hl.bind("XF86AudioRaiseVolume",
     hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
     { locked = true, repeating = true })

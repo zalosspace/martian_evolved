@@ -1,8 +1,7 @@
 import QtQuick
 import Quickshell.Io
 
-Rectangle {
-  id: brightnessPill
+Widget{
 
   function updateBrightness() {
     brightnessProc.running = true
@@ -28,16 +27,6 @@ Rectangle {
     Component.onCompleted: running = true
   }
 
-  color: "#040e0d"
-  width: briText.implicitWidth + 26
-  height: bar.implicitHeight
-  radius: height / 2
-
-  Text {
-    id: briText
-    anchors.centerIn: parent
-    color: "#f5e2c5"
-    font.weight: 600
-    text: "Bri: " + brightness + "%"
-  }
+  icon: "light_mode"
+  title: brightness + "%"
 }

@@ -2,10 +2,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
-// MEM
-Rectangle {
-  id: memUsagePill
-
+Widget {
   function updateMemUsage() {
     memProc.running = true
   }
@@ -25,17 +22,7 @@ Rectangle {
 
     Component.onCompleted: running = true
   }
-  color: "#040e0d"
-  width: memUsageText.implicitWidth + 26
-  height: bar.implicitHeight
-  radius: height / 2
 
-  Text {
-    id: memUsageText
-    anchors.centerIn: parent
-    color: "#f5e2c5"
-    font.weight: 600
-    text: "Mem: " + memUsage + "%"
-  }
+  icon: "memory_alt"
+  title: memUsage + "%"
 }
-

@@ -2,9 +2,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
-Rectangle {
-  id: cTempData
-
+Widget {
   function updateCpuTemp() {
     cTempProc.running = true
   }
@@ -25,18 +23,6 @@ Rectangle {
     Component.onCompleted: running = true
   }
 
-
-  color: "#040e0d"
-  width: cTempDataText.implicitWidth + 26
-  height: bar.implicitHeight
-  radius: height / 2
-
-  Text {
-    id: cTempDataText
-    text: "CTemp: " + cpuTemp + " °C"
-    anchors.centerIn: parent
-    color: "#f5e2c5"
-    font.weight: 600
-  }
+  icon: "thermometer"
+  title: cpuTemp + " °C"
 }
-

@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Services.Pipewire
 import Quickshell.Io
 import Quickshell.Hyprland
 import Quickshell.Wayland
@@ -43,9 +44,15 @@ PanelWindow{
     Media{}
   }
 
-
-  Clock{
+  Widget{
     anchors.centerIn: parent
+    SystemClock {
+      id: sysclock
+      precision: SystemClock.Minutes
+    }
+
+    icon: "schedule"
+    title: Qt.formatDateTime(sysclock.date, "hh:mm AP")
   }
 
   Row {
@@ -53,20 +60,38 @@ PanelWindow{
     spacing: 6
 
 
-    Bat{}
-    Volume{}
+    Widget{
+      id:audioPill
+    // Media Volume Widget
+    PwObjectTracker {
+      objects: [ Pipewire.defaultAudioSink ]
+    }
+
+    readonly property real volume: Pipewire.defaultAudioSink?.audio.volume ?? 0
+    readonly property bool muted:  Pipewire.defaultAudioSink?.audio.muted ?? false
+
+      icon: "volume_up"
+      title: audioPill.muted ? "Muted" : `${Math.round(audioPill.volume * 100)}%`
+    }
+
     Brightness{
       id: brightness
     }
     Cpu{
       id: cpuUsage
     }
-    CpuTemp{
-      id: cpuTemp
-    }
     Mem{
       id: memUsage
     }
+    CpuTemp{
+      id: cpuTemp
+    }
+
+    Widget{
+      icon: "battery_android_full"
+      title: `${Math.round(UPower.displayDevice.percentage * 100)}%`
+    }
+
   }
 
 }
