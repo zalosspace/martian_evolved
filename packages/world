@@ -32,6 +32,7 @@ gui-apps/quickshell
 gui-apps/waybar
 gui-apps/wev
 gui-libs/hyprcursor
+gui-libs/xdg-desktop-portal-hyprland
 gui-wm/hyprland
 media-fonts/lohit-devanagari
 media-fonts/symbols-nerd-font
@@ -60,6 +61,7 @@ net-wireless/bluetui
 net-wireless/bluez
 sci-ml/ollama
 sys-apps/dbus
+sys-apps/flatpak
 sys-apps/lsd
 sys-apps/usbutils
 sys-auth/elogind

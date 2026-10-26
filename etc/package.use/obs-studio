@@ -1,2 +1,3 @@
 media-video/obs-studio screencast
 media-video/obs-studio browser deckline fdk jack lua mpegts pulseaudio python qsv sndio speex test-input truetype v4l vlc websocket
+media-video/obs-studio decklink
