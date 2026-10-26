@@ -46,6 +46,7 @@ media-sound/playerctl
 media-sound/pulsemixer
 media-video/ffmpeg
 media-video/mpv
+media-video/obs-studio
 media-video/pipewire
 media-video/wireplumber
 net-analyzer/nload

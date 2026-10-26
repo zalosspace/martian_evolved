@@ -1,8 +1,6 @@
 #!/bin/sh
 
-BRIGHTNESS="/sys/class/backlight/amdgpu_bl0/brightness"
-
-inotifywait -m -q -e modify "$BRIGHTNESS" |
+inotifywait -m -q -e modify /sys/class/backlight/*/brightness |
 while read -r _; do
-    qs ipc call osd showBrightness
+    qs -p "/home/zalos/martain_evolved/config/osd/" ipc call osd showBrightness
 done
