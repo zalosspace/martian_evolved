@@ -59,19 +59,41 @@ PanelWindow{
     anchors.right: parent.right
     spacing: 6
 
-
+    // Media Volume Widget
     Widget{
       id:audioPill
-    // Media Volume Widget
-    PwObjectTracker {
-      objects: [ Pipewire.defaultAudioSink ]
-    }
 
-    readonly property real volume: Pipewire.defaultAudioSink?.audio.volume ?? 0
-    readonly property bool muted:  Pipewire.defaultAudioSink?.audio.muted ?? false
+      PwObjectTracker {
+        objects: [ Pipewire.defaultAudioSink ]
+      }
+
+      readonly property real volume: Pipewire.defaultAudioSink?.audio.volume ?? 0
+      readonly property bool muted:  Pipewire.defaultAudioSink?.audio.muted ?? false
+      Process {
+        id: incVol
+        command: ["sh", "-c", "pactl set-sink-volume @DEFAULT_SINK@ +5%"]
+      }
+      Process {
+        id: decVol
+        command: ["sh", "-c", "pactl set-sink-volume @DEFAULT_SINK@ -5%"]
+      }
 
       icon: "volume_up"
       title: audioPill.muted ? "Muted" : `${Math.round(audioPill.volume * 100)}%`
+
+      MouseArea {
+        anchors.fill: audioPill
+
+        onWheel: (wheel) => {
+          // Scrolled Up
+          if (wheel.angleDelta.y > 0) {
+            incVol.running = true
+          }
+          else {
+            decVol.running = true
+          }
+        }
+      }
     }
 
     Brightness{

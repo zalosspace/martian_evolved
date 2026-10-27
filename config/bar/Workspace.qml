@@ -6,7 +6,7 @@ import Quickshell.Services.UPower
 import QtQuick
 import QtQuick.Layouts
 
-Rectangle {
+Widget {
   height: bar.implicitHeight
   width: workspaceRow.implicitWidth + 24
   radius: height / 2
@@ -30,9 +30,17 @@ Rectangle {
 
         // MouseArea {
         //   anchors.fill: parent
-        //   onClicked: Hyprland.dispatch("workspace " + (index + 1))
+        //   anchors.margins: -4
+        //   acceptedButtons: Qt.LeftButton
+        //   cursorShape: Qt.PointingHandCursor
+        //
+        //   onClicked: {
+        //     Hyprland.dispatch("workspace " + (index + 1))
+        //   }
         // }
+
       }
     }
   }
+
 }

@@ -27,6 +27,28 @@ Widget{
     Component.onCompleted: running = true
   }
 
+  Process {
+    id: incBri
+    command: ["sh", "-c", "brightnessctl -e4 set 5%+"]
+  }
+  Process {
+    id: decBri
+    command: ["sh", "-c", "brightnessctl -e4 set 5%-"]
+  }
+
   icon: "light_mode"
   title: brightness + "%"
+
+  MouseArea {
+    anchors.fill: parent
+
+    onWheel: (wheel) => {
+      if (wheel.angleDelta.y > 0) {
+        incBri.running = true
+      }
+      else {
+        decBri.running = true
+      }
+    }
+  }
 }

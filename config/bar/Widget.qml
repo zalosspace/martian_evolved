@@ -3,7 +3,9 @@ import Quickshell.Services.UPower
 
 Rectangle {
   id: root
-  color: "#040e0d"
+  color: Qt.rgba(0.05,0.05,0.05,0.85)
+  // color: "#040e0d"
+  
   width: row.implicitWidth + 26
   height: bar.implicitHeight
   radius: height / 2

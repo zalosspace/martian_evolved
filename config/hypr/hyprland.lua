@@ -32,7 +32,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
     -- start zen with nvidia
     hl.exec_cmd("/home/zalos/zenn.sh")
-    hl.exec_cmd("quickshell -p martain_evolved/config/bar/shell.qml")
+    hl.exec_cmd("quickshell -p /home/zalos/.config/bar/shell.qml")
+    hl.exec_cmd("/home/zalos/.config/osd/start_osd.sh")
 
     -- hl.exec_cmd("pulseaudio --start")
     hl.exec_cmd("pipewire &")
@@ -320,8 +321,8 @@ hl.bind("XF86AudioMicMute",
     hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"),
     { locked = true, repeating = true })
 
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 set 5%+"),                  { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 set 5%-"),                  { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl -a play-pause"), { locked = true })

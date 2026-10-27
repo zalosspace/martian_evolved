@@ -7,7 +7,9 @@ Rectangle {
 
   id: root
   anchors.fill: parent
-  color: "#cc2b2b2b"
+
+  // color: "#cc2b2b2b"
+  color: Qt.rgba(0.1,0.1,0.1,0.7)
   radius: 20
 
   Column {

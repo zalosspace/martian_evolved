@@ -29,6 +29,7 @@ gui-apps/hyprlauncher
 gui-apps/hyprlock
 gui-apps/hyprshot
 gui-apps/quickshell
+gui-apps/sddm
 gui-apps/waybar
 gui-apps/wev
 gui-libs/hyprcursor
@@ -86,7 +87,6 @@ x11-libs/cairo
 x11-libs/libdrm
 x11-misc/dunst
 x11-misc/rofi
-x11-misc/sddm
 x11-terms/kitty
 xfce-base/thunar
 xfce-base/tumbler

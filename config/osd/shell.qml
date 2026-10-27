@@ -6,11 +6,19 @@ import Quickshell.Services.Pipewire
 
 PanelWindow {
   id: osd
-  // visible: false
-  visible: true
+  visible: false
+  // visible: true
   implicitHeight: 180
+
   implicitWidth: 180
   color: "transparent"
+  BackgroundEffect.blurRegion: Region {
+    item: osd.contentItem 
+    radius: 20
+  }
+
+  anchors.bottom: true
+  margins.bottom: 60
 
   exclusionMode: ExclusionMode.Ignore
   WlrLayershell.layer: WlrLayer.Overlay
