@@ -14,7 +14,6 @@ Widget {
 
   Row {
     id: workspaceRow
-    required property var modelData
     anchors.centerIn: parent
     spacing: 8
 
@@ -26,7 +25,7 @@ Widget {
         width: 12
         height: 12
         radius: height / 2
-        color: isActive ? "#3dd1b0" : "white"
+        color: isActive ? "#FF004D" : "white"
 
         // MouseArea {
         //   anchors.fill: parent

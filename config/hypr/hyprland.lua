@@ -18,7 +18,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local lock    = "hyprlock"
-local fileManager = "thunar"
+local fileManager = "nautilus"
 -- local menu        = "hyprlauncher"
 local menu        = "rofi -show drun"
 
@@ -177,6 +177,8 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
+        -- open new window to the right
+        force_split = 3,
     },
 })
 

@@ -23,11 +23,13 @@ dev-qt/qtdeclarative
 dev-qt/qtmultimedia
 dev-vcs/git
 gnome-base/gvfs
+gnome-base/nautilus
 gui-apps/awww
 gui-apps/eww
 gui-apps/hyprlauncher
 gui-apps/hyprlock
 gui-apps/hyprshot
+gui-apps/mpvpaper
 gui-apps/quickshell
 gui-apps/sddm
 gui-apps/waybar
@@ -46,6 +48,7 @@ media-sound/cava
 media-sound/pavucontrol
 media-sound/playerctl
 media-sound/pulsemixer
+media-sound/spotify
 media-video/ffmpeg
 media-video/mpv
 media-video/obs-studio
@@ -86,7 +89,7 @@ x11-drivers/xf86-video-vesa
 x11-libs/cairo
 x11-libs/libdrm
 x11-misc/dunst
+x11-misc/lightdm
 x11-misc/rofi
 x11-terms/kitty
-xfce-base/thunar
 xfce-base/tumbler

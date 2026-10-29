@@ -8,7 +8,6 @@ Rectangle {
   property real pillHeight: 40
 
   color: "#040e0d"
-  width: volText.implicitWidth + 26
   height: pillHeight
   radius: height / 2
 

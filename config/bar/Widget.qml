@@ -3,15 +3,15 @@ import Quickshell.Services.UPower
 
 Rectangle {
   id: root
-  color: Qt.rgba(0.05,0.05,0.05,0.85)
+  color: Qt.rgba(0.05,0.05,0.05,0.9)
   // color: "#040e0d"
   
   width: row.implicitWidth + 26
   height: bar.implicitHeight
   radius: height / 2
 
-  property string icon: "home"
-  property string title: "null"
+  property string icon: ""
+  property string title: ""
   property int iconSize: 24
 
   Row {
