@@ -14,6 +14,7 @@ app-misc/neofetch
 app-misc/tty-clock
 app-portage/gentoolkit
 app-shells/zsh
+dev-build/ninja
 dev-cpp/gtkmm
 dev-lang/python
 dev-libs/wayland
@@ -41,8 +42,11 @@ media-fonts/lohit-devanagari
 media-fonts/symbols-nerd-font
 media-gfx/imagemagick
 media-libs/alsa-lib
+media-libs/glfw
+media-libs/glm
 media-libs/mesa
 media-libs/portaudio
+media-libs/raylib
 media-sound/alsa-utils
 media-sound/cava
 media-sound/pavucontrol

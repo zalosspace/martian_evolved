@@ -51,16 +51,82 @@ ShellRoot {
         Media{}
       }
 
-      Widget{
+      // Clock
+      Rectangle {
+        id: clock
+        color: Qt.rgba(0.05,0.05,0.05,0.9)
+        // color: "#040e0d"
+        property bool hovered: false
+
+        width: hovered ? row.implicitWidth+15 : row.implicitWidth + 15 
+        height: bar.implicitHeight
+        radius: height / 2
         anchors.centerIn: parent
         SystemClock {
           id: sysclock
           precision: SystemClock.Minutes
         }
 
-        icon: "schedule"
-        title: Qt.formatDateTime(sysclock.date, "hh:mm AP")
+        Behavior on width {
+          NumberAnimation {
+            duration: 350;
+            easing.type: Easing.OutBack
+          }
+        }
+
+        MouseArea {
+          anchors.fill: parent
+          hoverEnabled: true
+          onContainsMouseChanged: clock.hovered = containsMouse
+        }
+
+        property string icon: "schedule"
+        property string title: hovered ? 
+        Qt.formatDateTime(sysclock.date, "dd MMM hh:mm AP dddd")
+        : Qt.formatDateTime(sysclock.date, "hh:mm AP")
+        property int iconSize: 24
+
+        Row {
+          id: row
+          anchors.centerIn: parent
+          spacing: 6
+
+          Text {
+            text: clock.icon
+            font.family: "Material Symbols Rounded"
+            font.pixelSize: clock.iconSize
+            color: "white"
+            font.variableAxes: ({
+              // "FILL": 1,
+            })
+
+            // horizontalAlignment: Text.AlignHCenter
+            anchors.verticalCenter: parent.verticalCenter
+            // verticalAlignment: Text.AlignVCenter
+          }
+
+          Text {
+            id: bat
+            text: clock.title
+            property int iconSize: 24
+            anchors.verticalCenter: parent.verticalCenter
+            color: "#f5e2c5"
+
+            Behavior on opacity {
+              NumberAnimation {
+                duration: 1000;
+                easing.type: Easing.OutBack
+              }
+            }
+
+
+            font {
+              weight: 600
+            }
+          }
+        }
       }
+      //----
 
       Row {
         anchors.right: parent.right

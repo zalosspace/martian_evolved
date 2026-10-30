@@ -13,9 +13,29 @@ Rectangle {
   radius: height / 2
 
   property string icon: "music_note"
-  // property string title: ""
   property int iconSize: 24
+  // property int position: 0
+  // property int length: 0
   property MprisPlayer activePlayer: Mpris.players.values[0]
+
+  // Process {
+  //   id: metadata
+  //   command: ["sh", "-c", "playerctl metadata --format '{{position}} {{mpris:length}}'"]
+  //   stdout: SplitParser {
+  //     onRead: data => {
+  //       var temp = data.trim().split(/\s+/)
+  //       if (root.activePlayer) {
+  //         position = Math.round(temp[0]/1000000)
+  //         length = Math.round(temp[1]/1000000)
+  //         console.log(position)
+  //         console.log(length)
+  //         root.progress = position / length
+  //       }
+  //     }
+  //   }
+  //
+  //   Component.onCompleted: running = true
+  // }
 
   Process {
     id: playPause
@@ -55,26 +75,23 @@ Rectangle {
     repeat: true
 
     onTriggered: {
-      if (root.activePlayer && root.activePlayer.length > 0) {
-        if(activePlayer.position != activePlayer.length)
-        root.progress = root.activePlayer.position / root.activePlayer.length
-      }
+      metadata.running = true
     }
   }
 
   property string title: activePlayer ? (activePlayer.trackArtist + " - " + activePlayer.trackTitle).substr(0,28) : "Stagnant"
 
-  Rectangle {
-    anchors {
-      left: parent.left
-      top: parent.top
-      bottom: parent.bottom
-    }
-    color: "#FF004D"
-    opacity: 0.8
-    width: parent.progress*parent.width
-    radius: parent.radius
-  }
+  // Rectangle {
+  //   anchors {
+  //     left: parent.left
+  //     top: parent.top
+  //     bottom: parent.bottom
+  //   }
+  //   color: "#FF004D"
+  //   opacity: 0.8
+  //   width: parent.progress*parent.width
+  //   radius: parent.radius
+  // }
 
   Row {
     id: row
