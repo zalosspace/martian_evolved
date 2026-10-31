@@ -79,7 +79,8 @@ Rectangle {
     }
   }
 
-  property string title: activePlayer ? (activePlayer.trackArtist + " - " + activePlayer.trackTitle).substr(0,28) : "Stagnant"
+  // property string title: activePlayer ? (activePlayer.trackArtist + " - " + activePlayer.trackTitle).substr(0,28) : "Stagnant"
+  property string title: activePlayer ? (activePlayer.trackTitle).substr(0,28) : "Stagnant"
 
   // Rectangle {
   //   anchors {

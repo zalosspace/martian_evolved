@@ -13,9 +13,11 @@ app-misc/keyd
 app-misc/neofetch
 app-misc/tty-clock
 app-portage/gentoolkit
+app-shells/bash
 app-shells/zsh
 dev-build/ninja
 dev-cpp/gtkmm
+dev-lang/perl
 dev-lang/python
 dev-libs/wayland
 dev-libs/wayland-protocols
