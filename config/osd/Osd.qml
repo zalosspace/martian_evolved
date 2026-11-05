@@ -19,7 +19,7 @@ Rectangle {
     anchors.verticalCenterOffset: -15;
     anchors.horizontalCenter: parent.horizontalCenter
     font.family: "Material Symbols Rounded"
-    font.pixelSize: 95
+    font.pixelSize: 90
     color: "white"
     font.variableAxes: ({
       // "FILL": 1,
@@ -34,8 +34,8 @@ Rectangle {
       left: parent.left
       right: parent.right
       bottom: parent.bottom
-      leftMargin: 20
-      rightMargin: 20
+      leftMargin: 35
+      rightMargin: 35
       bottomMargin: 22
     }
 

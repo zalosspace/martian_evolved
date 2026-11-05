@@ -119,7 +119,6 @@ ShellRoot {
               }
             }
 
-
             font {
               weight: 600
             }
@@ -151,7 +150,7 @@ ShellRoot {
             command: ["sh", "-c", "pactl set-sink-volume @DEFAULT_SINK@ -5%"]
           }
 
-          icon: "volume_up"
+          icon: audioPill.muted ? "volume_off" : "volume_up"
           title: audioPill.muted ? "Muted" : `${Math.round(audioPill.volume * 100)}%`
 
           MouseArea {
@@ -183,7 +182,7 @@ ShellRoot {
         }
 
         Widget{
-          icon: "battery_android_full"
+          icon: UPower.onBattery ? "battery_android_full" : "battery_android_bolt"
           title: `${Math.round(UPower.displayDevice.percentage * 100)}%`
         }
 

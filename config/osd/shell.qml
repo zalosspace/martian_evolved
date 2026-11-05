@@ -86,8 +86,8 @@ ShellRoot {
         icon: osd.mode === "volume" ? "volume_up" : "light_mode"
         percent: osd.mode === "volume" ? osd.volume : osd.brightness/100
         label: osd.mode === "volume"
-        ? (osd.muted ? "Muted" : Math.round(osd.volume * 100) + "")
-        : osd.brightness + "%"
+        ? (osd.muted ? "Muted" : Math.round(osd.volume * 100))
+        : osd.brightness
       }
 
     }

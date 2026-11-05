@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 ~/.config/fastfetch/random_logo.sh
-fastfetch
+fastfetch --disable-linewrap true
 
 exec zsh

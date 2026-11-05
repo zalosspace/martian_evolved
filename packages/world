@@ -12,13 +12,16 @@ app-misc/jq
 app-misc/keyd
 app-misc/neofetch
 app-misc/tty-clock
+app-misc/yazi
 app-portage/gentoolkit
 app-shells/bash
 app-shells/zsh
 dev-build/ninja
 dev-cpp/gtkmm
+dev-lang/bun-bin
 dev-lang/perl
 dev-lang/python
+dev-lang/tcc
 dev-libs/wayland
 dev-libs/wayland-protocols
 dev-qt/qtbase
@@ -37,6 +40,7 @@ gui-apps/quickshell
 gui-apps/sddm
 gui-apps/waybar
 gui-apps/wev
+gui-apps/wlogout
 gui-libs/hyprcursor
 gui-libs/xdg-desktop-portal-hyprland
 gui-wm/hyprland
@@ -96,6 +100,7 @@ x11-libs/cairo
 x11-libs/libdrm
 x11-misc/dunst
 x11-misc/lightdm
+x11-misc/matugen
 x11-misc/rofi
 x11-terms/kitty
 xfce-base/tumbler
